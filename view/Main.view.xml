@@ -1,0 +1,62 @@
+<mvc:View
+	controllerName="com.penninkhof.pentagon.controller.Main"
+	xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:p="com.penninkhof.pentagon.control">
+	<App>
+		<Page title="{i18n>title}">
+			
+			<f:SimpleForm id="SimpleFormChange480"
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				title="{i18n>chartdata}"
+				labelSpanL="4"
+				labelSpanM="4"
+				emptySpanL="0"
+				emptySpanM="0"
+				columnsL="4"
+				columnsM="4"
+				class="editableForm">
+				<f:content>
+					<core:Title text="{i18n>dataset1}" />
+					<Label text="{i18n>performance}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset1/0/value}" />
+					<Label text="{i18n>security}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset1/1/value}" />
+					<Label text="{i18n>robustness}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset1/2/value}" />
+					<Label text="{i18n>changeability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset1/3/value}" />
+					<Label text="{i18n>transferability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset1/4/value}" />
+					<core:Title text="{i18n>dataset2}" />
+					<Label text="{i18n>performance}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/0/value}" />
+					<Label text="{i18n>security}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/1/value}" />
+					<Label text="{i18n>robustness}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/2/value}" />
+					<Label text="{i18n>changeability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/3/value}" />
+					<Label text="{i18n>transferability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/4/value}" />
+				</f:content>
+			</f:SimpleForm>
+
+			<p:Pentagon class="sapUiResponsiveMargin" height="600px" width="600px">
+				<p:axes>
+					<core:Item text="{i18n>performance}" />
+					<core:Item text="{i18n>security}" />
+					<core:Item text="{i18n>robustness}" />
+					<core:Item text="{i18n>changeability}" />
+					<core:Item text="{i18n>transferability}" />
+				</p:axes>
+				<p:dataSets>
+					<p:DataSet fillColor="rgba(102,45,145,.1)" strokeColor="rgba(102,45,145,1)" pointColor="rgba(220,220,220,1)" pointStrokeColor="#fff" data="{/dataset1}">
+						<p:Value value="{value}" />
+					</p:DataSet>
+					<p:DataSet fillColor="rgba(63,169,245,.1)" strokeColor="rgba(63,169,245,1)" pointColor="rgba(151,187,205,1)" pointStrokeColor="#fff" data="{/dataset2}">
+						<p:Value value="{value}" />
+					</p:DataSet>
+				</p:dataSets>
+			</p:Pentagon>
+
+		</Page>
+	</App>
+</mvc:View>
