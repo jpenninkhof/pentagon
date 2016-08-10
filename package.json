@@ -1,0 +1,17 @@
+{
+  "name": "pentagon",
+  "version": "1.0.0",
+  "description": "Pentagon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpenninkhof/pentagon.git"
+  },
+  "author": "Jan Penninkhof",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": ">=0.4.5",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-connect-proxy": "0.1.10",
+    "grunt-openui5": "^0.9.0"
+  }
+}

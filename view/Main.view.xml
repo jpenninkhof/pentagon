@@ -9,19 +9,19 @@
 	xmlns:p="com.penninkhof.pentagon.control">
 	<App>
 		<Page title="{i18n>title}">
-			
+
 			<f:SimpleForm id="SimpleFormChange480"
 				minWidth="1024"
 				maxContainerCols="2"
 				editable="true"
 				layout="ResponsiveGridLayout"
 				title="{i18n>chartdata}"
-				labelSpanL="4"
-				labelSpanM="4"
+				labelSpanL="6"
+				labelSpanM="6"
 				emptySpanL="0"
 				emptySpanM="0"
-				columnsL="4"
-				columnsM="4"
+				columnsL="3"
+				columnsM="3"
 				class="editableForm">
 				<f:content>
 					<core:Title text="{i18n>dataset1}" />
@@ -36,10 +36,21 @@
 					<Label text="{i18n>robustness}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/2/value}" />
 					<Label text="{i18n>changeability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/3/value}" />
 					<Label text="{i18n>transferability}" /><StepInput min="0" step="0.5" width="7em" value="{/dataset2/4/value}" />
+					<core:Title text="{i18n>scale}" />
+					<Label text="{i18n>scaleOverride}" /><Switch state="{/options/scaleOverride}" />
+					<Label text="{i18n>scaleStartValue}" /><StepInput min="0" step="1" width="7em" value="{/options/scaleStartValue}" />
+					<Label text="{i18n>scaleSteps}" /><StepInput min="0" step="1" width="7em" value="{/options/scaleSteps}" />
+					<Label text="{i18n>scaleStepWidth}" /><StepInput min="1" step="1" width="7em" value="{/options/scaleStepWidth}" />
 				</f:content>
 			</f:SimpleForm>
 
-			<p:Pentagon class="sapUiResponsiveMargin" height="600px" width="600px">
+			<p:Pentagon
+				class="sapUiResponsiveMargin"
+				scaleOverride="{/options/scaleOverride}"
+				scaleStartValue="{/options/scaleStartValue}"
+				scaleSteps="{/options/scaleSteps}"
+				scaleStepWidth="{/options/scaleStepWidth}"
+				height="600px" width="600px">
 				<p:axes>
 					<core:Item text="{i18n>performance}" />
 					<core:Item text="{i18n>security}" />

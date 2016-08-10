@@ -9,7 +9,7 @@ sap.ui.define([
 		}
 	}});
 
-	Item.prototype.setValue = function(value, x, y, z) {
+	Item.prototype.setValue = function(value) {
 		this.setProperty("value", value, true);
 		this.getParent().getParent().update();
 	};
